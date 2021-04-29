@@ -1,0 +1,61 @@
+li[data-tipo="fire"] {
+  background: red;
+  color: white;
+}
+li[data-tipo="grass"] {
+  background: greenyellow;
+}
+li[data-tipo="water"] {
+  background: blue;
+  color: white;
+}
+li[data-tipo="bug"] {
+  background: rgba(192, 238, 68, 0.932);
+}
+li[data-tipo="normal"] {
+  background: #ddd;
+}
+li[data-tipo="poison"] {
+  background: blueviolet;
+  color: white;
+}
+li[data-tipo="electric"] {
+  background: yellow;
+}
+li[data-tipo="ground"] {
+  background: moccasin;
+}
+li[data-tipo="fighting"] {
+  background: rgb(233, 167, 54);
+}
+li[data-tipo="psychic"] {
+  background: violet;
+}
+li[data-tipo="rock"] {
+  background: maroon;
+  color: white;
+}
+li[data-tipo="flying"] {
+  background: rgb(50, 162, 236);
+}
+li[data-tipo="ghost"] {
+  background: rgb(51, 51, 51);
+  color: white;
+}
+li[data-tipo="ice"] {
+  background: royalblue;
+  color: white;
+}
+li[data-tipo="dragon"] {
+  background: rebeccapurple;
+  color: white;
+}
+li[data-tipo="steel"] {
+  background: rgb(112, 107, 107);
+}
+li[data-tipo="dark"] {
+  background: black;
+color: white;}
+li[data-tipo="fairy"] {
+  background: rgb(255, 28, 244);
+}
