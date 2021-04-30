@@ -5,18 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PokeApi</title>
-    <link rel="stylesheet" href="styles/reset.css" />
-    <link rel="stylesheet" href="styles/form.css" />
-    <link rel="stylesheet" href="styles/styles.css" />
     <link rel="stylesheet" href="styles/types.css" />
+    <link rel="stylesheet" href="styles/reset.css" />
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="styles/header.css" />
+    <link rel="stylesheet" href="styles/form.css" />
+    <link rel="stylesheet" href="styles/modal.css">
   </head>
   <body>
-    <header class="">
+    <header class="header">
       <h1 class="logo">Pokemon</h1>
-      <a href="https://www.github.com/aldovani" target="_blank">Git</a>
+
+      <div>
+        <input type="checkbox" />
+
+        <a href="https://github.com/Aldovani/pokedex-js" target="_blank"
+          ><img class="github" src="img/icon-git-hub.png" alt=""
+        /></a>
+      </div>
     </header>
 
-    <form>
+    <form class="form">
       <input
         type="text"
         placeholder="Digite o nome do Pokemon ou ID"
@@ -26,6 +35,14 @@
       <button type="submit">Apetar</button>
     </form>
     <div class="container"></div>
-    <script src="main.js"></script>
+
+    <section class="modal">
+<div>
+  <h2>Erro</h2>
+  <p>o erro</p>
+  <button>Fechar  </button>
+</div>
+    </section>
+    <script src="js/main.js"></script>
   </body>
 </html>
