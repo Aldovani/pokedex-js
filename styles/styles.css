@@ -2,6 +2,7 @@ body {
   color: black;
   background: #fff;
   font-family: Arial, sans-serif;
+
 }
 
 .container {
@@ -32,7 +33,7 @@ body {
   width: 100px;
 }
 
- section {
+ .section {
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
@@ -55,8 +56,10 @@ body {
 }
 
 .pokemon:focus {
+  outline: none;
   background: #555
 }
+
 .pokemon:focus .stats{
 display: flex;
 }

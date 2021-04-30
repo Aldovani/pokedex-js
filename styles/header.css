@@ -1,3 +1,33 @@
-.logo{
+.header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid black;
   
+  padding: 20px;
+  align-items: center;
+  
+}
+
+.logo {
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.github {
+  width: 50px;
+  height: 50px;
+}
+
+.github:hover{
+  animation: github 2s alternate;
+
+}
+@keyframes github{
+  from {
+    transform: rotateX(0deg)
+  }
+  to{
+    transform: rotateX(360deg);
+
+  }
 }

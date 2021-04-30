@@ -1,11 +1,11 @@
-form {
+.form {
   margin-top: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-input {
+.form input {
   height: 30px;
   width: 200px;
   outline: none;
@@ -15,11 +15,11 @@ input {
   position: relative;
 }
 
-input:focus {
+.form input:focus {
   color: black;
 }
 
-button {
+.form button {
   box-sizing: border-box;
   border: none;
   outline: none;
