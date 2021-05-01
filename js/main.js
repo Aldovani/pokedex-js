@@ -17,7 +17,6 @@ async function pokemon() {
 async function getPokemon(txt) {
   let pokemonList = [];
   for (contI; contI <= Number(txt); contI++) {
-    console.log(contI);
     const pokemon = await fetch(`https://pokeapi.co/api/v2/pokemon/${contI}`)
       .then((response) => response.json())
       .then((pokemon) => pokemon)

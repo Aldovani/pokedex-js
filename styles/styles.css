@@ -7,6 +7,7 @@ body {
   color: black;
   background: #fff;
   font-family: Arial, sans-serif;
+  transition: all 1s;
 }
 
 .container {
@@ -30,6 +31,7 @@ body {
   height: 340px;
   position: relative;
   transition: all 0.5s;
+  box-shadow: 1px 1px 6px black;
 }
 .pokemon img {
   height: 100px;
@@ -50,6 +52,7 @@ body {
   width: 85%;
 }
 .info {
+  box-sizing: border-box;
   transform: translateY(0px);
   transition: all 2s;
 }
@@ -86,10 +89,14 @@ section ol {
   display: flex;
   flex-direction: column;
   text-align: end;
+  gap: 10px 0;
 }
-.stats ol li p {
-  display: block;
-  box-sizing: border-box;
+
+.stats ol li p:last-child {
+  color: #000;
+background: #fff;
+border-radius:2px ;
+padding: 1px;
 }
 .stats li {
   display: flex;
@@ -110,14 +117,14 @@ section ol {
 
 .pokemon:focus .stats {
   opacity: 1;
-  transform: translateY(80px);
+  transform: translateY(70px);
 }
 .pokemon:focus .info {
-  transform: translateY(-140px);
+  transform: translateY(-160px);
 }
 
 .pokemon:focus img {
-  transform: translateX(65px);
+  transform: translateY(-25px) translateX(65px);
 }
 
 button {
@@ -129,3 +136,20 @@ button {
   outline: none;
   background-color: transparent;
 }
+
+.dark-mode{
+  background: #9b9999;
+}
+
+.dark-mode .pokemon{
+  background: rgb(124, 124, 124);
+}
+.dark-mode .pokemon .stats{
+  background: #000;
+  color: #fff;
+}
+.dark-mode .pokemon .info{
+  background: #000;
+  color: #fff;
+}
+

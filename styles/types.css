@@ -1,3 +1,6 @@
+li[data-tipo]{
+  color: black;
+}
 li[data-tipo="fire"] {
   background: red;
   color: white;
@@ -10,7 +13,7 @@ li[data-tipo="water"] {
   color: white;
 }
 li[data-tipo="bug"] {
-  background: rgba(192, 238, 68, 0.932);
+  background: #c0ee44ee;
 }
 li[data-tipo="normal"] {
   background: #ddd;
@@ -26,7 +29,7 @@ li[data-tipo="ground"] {
   background: moccasin;
 }
 li[data-tipo="fighting"] {
-  background: rgb(233, 167, 54);
+  background: #e9a736;
 }
 li[data-tipo="psychic"] {
   background: violet;
@@ -36,10 +39,10 @@ li[data-tipo="rock"] {
   color: white;
 }
 li[data-tipo="flying"] {
-  background: rgb(50, 162, 236);
+  background: #32a2ec;
 }
 li[data-tipo="ghost"] {
-  background: rgb(51, 51, 51);
+  background: #333333;
   color: white;
 }
 li[data-tipo="ice"] {
@@ -51,11 +54,14 @@ li[data-tipo="dragon"] {
   color: white;
 }
 li[data-tipo="steel"] {
-  background: rgb(112, 107, 107);
+  background: #706b6b;
 }
 li[data-tipo="dark"] {
   background: black;
 color: white;}
 li[data-tipo="fairy"] {
-  background: rgb(255, 28, 244);
+  background: #ff1cf4;
+  color: white;
 }
+
+

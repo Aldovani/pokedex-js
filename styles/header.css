@@ -13,21 +13,20 @@
   font-weight: 500;
 }
 
+.header div{
+  width:200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .github {
   width: 50px;
   height: 50px;
+  transition: transform 2s;
 }
 
 .github:hover{
-  animation: github 2s alternate;
+  transform: rotateX(360deg);
 
-}
-@keyframes github{
-  from {
-    transform: rotateX(0deg)
-  }
-  to{
-    transform: rotateX(360deg);
-
-  }
 }
