@@ -1,8 +1,12 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   color: black;
   background: #fff;
   font-family: Arial, sans-serif;
-
 }
 
 .container {
@@ -21,19 +25,20 @@ body {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  text-align: center;
   background: #f2f2f2;
   width: 250px;
   height: 340px;
   position: relative;
-  transition: all 2s;
+  transition: all 0.5s;
 }
 .pokemon img {
   height: 100px;
   width: 100px;
+  transition: all 1s;
+  z-index: 3;
 }
 
- .section {
+.section {
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
@@ -44,28 +49,21 @@ body {
   text-align: left;
   width: 85%;
 }
+.info {
+  transform: translateY(0px);
+  transition: all 2s;
+}
 .idPokemon {
   color: #919191;
   font-size: 16px;
 }
 
-.pokemon section h3 {
+.pokemon .namePokemon {
   text-transform: capitalize;
   font-size: 24px;
   font-weight: normal;
 }
 
-.pokemon:focus {
-  outline: none;
-  background: #555
-}
-
-.pokemon:focus .stats{
-display: flex;
-}
-.pokemon:focus .info{
-display: none;
-}
 .tipos {
   margin-right: 10px;
   padding: 4px 10px;
@@ -79,8 +77,10 @@ section ol {
 }
 
 .stats {
-  display: none;
-  
+  position: absolute;
+  opacity: 0;
+  transform: translateY(0px);
+  transition: all 2s;
 }
 .stats ol {
   display: flex;
@@ -95,4 +95,37 @@ section ol {
   display: flex;
   width: 193px;
   justify-content: space-between;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pokemon:focus {
+  outline: none;
+  background: #868686;
+}
+
+.pokemon:focus .stats {
+  opacity: 1;
+  transform: translateY(80px);
+}
+.pokemon:focus .info {
+  transform: translateY(-140px);
+}
+
+.pokemon:focus img {
+  transform: translateX(65px);
+}
+
+button {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  box-sizing: border-box;
+  cursor: pointer;
+  border: 0;
+  outline: none;
+  background-color: transparent;
 }
