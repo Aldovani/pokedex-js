@@ -1,8 +1,11 @@
-const input = document.querySelector('input')
-input.addEventListener('change', (e) => {
-  if(input.checked)
-   console.log( document.body.classList.add("dark-mode")) 
-  else
-  console.log( document.body.classList.remove("dark-mode")) 
-    
-})
+const input = document.querySelector("input");
+
+input.addEventListener("change", () => {
+  if (input.checked) {
+    document.body.classList.toggle("dark-mode");
+  } else {
+    document.body.classList.toggle("dark-mode");
+  }
+});
+
+

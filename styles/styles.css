@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -33,6 +34,11 @@ body {
   transition: all 0.5s;
   box-shadow: 1px 1px 6px black;
 }
+
+.pokemon:hover {
+  transform: translateY(-10px) scale(1.03);
+}
+
 .pokemon img {
   height: 100px;
   width: 100px;
@@ -54,7 +60,7 @@ body {
 .info {
   box-sizing: border-box;
   transform: translateY(0px);
-  transition: all 2s;
+  transition: all 1s;
 }
 .idPokemon {
   color: #919191;
@@ -83,7 +89,7 @@ section ol {
   position: absolute;
   opacity: 0;
   transform: translateY(0px);
-  transition: all 2s;
+  transition: all 1s;
 }
 .stats ol {
   display: flex;
@@ -94,9 +100,9 @@ section ol {
 
 .stats ol li p:last-child {
   color: #000;
-background: #fff;
-border-radius:2px ;
-padding: 1px;
+  background: #fff;
+  border-radius: 2px;
+  padding: 1px;
 }
 .stats li {
   display: flex;
@@ -108,11 +114,11 @@ padding: 1px;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 
 .pokemon:focus {
   outline: none;
-  background: #868686;
 }
 
 .pokemon:focus .stats {
@@ -137,19 +143,22 @@ button {
   background-color: transparent;
 }
 
-.dark-mode{
-  background: #9b9999;
+.load {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  color: #000;
+  border: 3px solid;
+  border-top-color: transparent;
+  animation: load 0.5s linear infinite;
+  display: none;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
-.dark-mode .pokemon{
-  background: rgb(124, 124, 124);
+@keyframes load {
+  to {
+    transform: rotate(360deg);
+    filter: contrast(10);
+  }
 }
-.dark-mode .pokemon .stats{
-  background: #000;
-  color: #fff;
-}
-.dark-mode .pokemon .info{
-  background: #000;
-  color: #fff;
-}
-

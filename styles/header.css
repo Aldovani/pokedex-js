@@ -1,23 +1,22 @@
 .header {
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid black;
-  
-  padding: 20px;
   align-items: center;
   
+  padding: 20px;
 }
 
 .logo {
   font-size: 30px;
-  font-weight: 500;
+  font-weight: 900;
 }
 
-.header div{
-  width:200px;
+.header div {
+  width: 200px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 0 30px ;
 }
 
 .github {
@@ -26,7 +25,51 @@
   transition: transform 2s;
 }
 
-.github:hover{
-  transform: rotateX(360deg);
+input[type=checkbox]{
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
 
+label {
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 52px;
+  height: 27px;
+  background: grey;
+  float: right;
+  border-radius: 100px;
+  position: relative;
+}
+
+label::after{
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  background-color: rgb(109, 128, 236);
+  border-radius: 90px;
+  transition: 0.3s;
+}
+
+input:checked + label {
+  background-color: #fff;
+}
+
+input:checked + label::after {
+  left: calc(100% - 5px);
+  transform: translateX(-100%);
+}
+
+label:active:after {
+  width: 45px;
+}
+.github:hover {
+  transform: rotateX(360deg);
+}
+
+.dark-mode .github{
+  filter: invert(100%);
 }

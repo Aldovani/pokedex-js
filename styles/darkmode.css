@@ -1,0 +1,20 @@
+
+.dark-mode{
+  background: #504f4f;
+}
+
+.dark-mode .header{
+  color: #fff;
+}
+.dark-mode .pokemon{
+  background: #6b6b6b;
+}
+.dark-mode .pokemon .stats{
+  background: #000;
+  color: #fff;
+}
+.dark-mode .pokemon .info{
+  background: #000;
+  color: #fff;
+}
+

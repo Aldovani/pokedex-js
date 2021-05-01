@@ -5,14 +5,19 @@ let n = 24;
 
 document.querySelector("script").addEventListener("load",pokemon);
 button.addEventListener("click", (e) => {
+  button.style="display:none"
   e.preventDefault();
   pokemon();
 });
 async function pokemon() {
+  
+  document.querySelector('.load').style="display:block"
   const pokemon = await getPokemon(n);
   pokemon.map((e) => {
     createCard(e);
   });
+  button.style = "display:block"
+  document.querySelector('.load').style="display:none "
 }
 async function getPokemon(txt) {
   let pokemonList = [];
@@ -63,7 +68,7 @@ function createCard(pokemon) {
   const card = `
   <div class="pokemon" tabindex="1">
 
-    <img src="${pokemon.sprites.front_default}"/>
+    <img   src="${pokemon.sprites.front_default}"/>
     <section class="info section">
       <span class="idPokemon" >#${idConvertido}</span>
       <h3 class="namePokemon" >${pokemon.name}</h3>
