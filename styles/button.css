@@ -8,12 +8,10 @@
   background: #000000;
   margin: 10px 30px;
   border-radius: 10px;
-visibility: hidden;
+  opacity: 0;
+transition: opacity 1s ;
 }
-.button.visible{
-  transition: visibility 2s;
 
-}
 
 .button::after {
   content: "";
@@ -27,10 +25,8 @@ visibility: hidden;
   border-top: solid #ffffff;
   border-right: solid #ffffff;
   transform: rotate(317deg) translate(50%);
-  
-  
 }
 
 .button.visible{
-  visibility: visible;
+  opacity:1;
 }
