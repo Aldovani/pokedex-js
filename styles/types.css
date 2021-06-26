@@ -1,5 +1,6 @@
 li[data-tipo]{
   color: black;
+  text-transform: capitalize;
 }
 li[data-tipo="fire"] {
   background: red;

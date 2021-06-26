@@ -3,33 +3,32 @@ const button = document.querySelector("button");
 let contI = 1;
 let n = 24;
 
-document.querySelector("script").addEventListener("load",pokemon);
-button.addEventListener("click", (e) => {
-  button.style="display:none"
-  e.preventDefault();
+window.onload = pokemon;
+
+button.addEventListener("click", () => {
+  button.style = "display:none";
   pokemon();
 });
+
 async function pokemon() {
-  
-  document.querySelector('.load').style="display:block"
+
+  document.querySelector(".load").style = "display:block";
   const pokemon = await getPokemon(n);
-  pokemon.map((e) => {
-    createCard(e);
-  });
-  button.style = "display:block"
-  document.querySelector('.load').style="display:none "
+  pokemon.map((e) => createCard(e));
+
+  button.style = "display:block";
+  document.querySelector(".load").style = "display:none ";
+  if (contI > 898) {
+    button.style = "display:none";
+  }
 }
-async function getPokemon(txt) {
+
+async function getPokemon(textNumber ,nome='') {
   let pokemonList = [];
-  for (contI; contI <= Number(txt); contI++) {
-    const pokemon = await fetch(`https://pokeapi.co/api/v2/pokemon/${contI}`)
-      .then((response) => response.json())
-      .then((pokemon) => pokemon)
-      .catch((err) => {
-        console.log(err);
-       
-      });
-      pokemonList.push(pokemon);
+  for (contI; contI <= Number(textNumber) && contI <= 898; contI++) {
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${contI}`);
+    const pokemon = await response.json();
+    pokemonList.push(pokemon);
   }
   n += 12;
   return pokemonList;
@@ -40,20 +39,12 @@ function createCard(pokemon) {
   let listTypesElement = "";
   let idConvertido = "";
 
-  const { id, types, stats } = pokemon;
+  const { id, types, stats, name, sprites } = pokemon;
 
-  if (id < 100) {
-    idConvertido = `${id}`.padStart(3, "0");
-  } else {
-    idConvertido = id;
-  }
+  id < 100 ? (idConvertido = `${id}`.padStart(3, "0")) : (idConvertido = id);
 
   for (const state of stats) {
-    listStatsElement += `
-    <li>
-      <p>${state.stat.name}: </p>
-      <p>${state.base_stat}</p>
-    </li>
+    listStatsElement += `<li>${state.stat.name}:${state.base_stat} </li>
     `;
   }
 
@@ -65,13 +56,19 @@ function createCard(pokemon) {
   `;
   }
 
-  const card = `
-  <div class="pokemon" tabindex="1">
 
-    <img   src="${pokemon.sprites.front_default}"/>
+  const card = `
+  <div class="pokemon" data-id-pokemon=${id} data-name-pokemon=${name} tabindex="0">
+
+    <img
+      title="${name}"
+      alt="${name}" 
+      src="${sprites.front_default}"
+    />
+
     <section class="info section">
       <span class="idPokemon" >#${idConvertido}</span>
-      <h3 class="namePokemon" >${pokemon.name}</h3>
+      <h3 class="namePokemon" >${name}</h3>
       <ol>
         ${listTypesElement}  
       </ol>

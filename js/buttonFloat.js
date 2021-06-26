@@ -2,7 +2,6 @@ const buttons = document.querySelector('.button');
 
 window.addEventListener('scroll', () => {
  const top =document.querySelector('header').getBoundingClientRect().top
-console.log(top)
   if (top <= -1000) {
     buttons.classList.add('visible')
   }

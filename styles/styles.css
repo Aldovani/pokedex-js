@@ -2,11 +2,13 @@
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
+  box-sizing: border-box;
+
 }
 
 body {
   color: black;
-  background: #fff;
+  background: #eff0f3;
   font-family: Arial, sans-serif;
   transition: all 1s;
 }
@@ -27,12 +29,12 @@ body {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  background: #f2f2f2;
+  background: #fffffe;
   width: 250px;
   height: 340px;
   position: relative;
   transition: all 0.5s;
-  box-shadow: 1px 1px 6px black;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
 }
 
 .pokemon:hover {
@@ -52,15 +54,14 @@ body {
   box-sizing: border-box;
   padding: 10px;
   gap: 15px;
-  background-color: white;
   border-radius: 10px;
   text-align: left;
   width: 85%;
 }
 .info {
-  box-sizing: border-box;
   transform: translateY(0px);
   transition: all 1s;
+
 }
 .idPokemon {
   color: #919191;
@@ -74,7 +75,8 @@ body {
 }
 
 .tipos {
-  margin-right: 10px;
+  border-radius: 4px;
+  margin-right: 8px;
   padding: 4px 10px;
 }
 
@@ -86,10 +88,11 @@ section ol {
 }
 
 .stats {
+  transform: translateY(0px);
   position: absolute;
   opacity: 0;
-  transform: translateY(0px);
   transition: all 1s;
+  text-transform: capitalize;
 }
 .stats ol {
   display: flex;
@@ -100,27 +103,22 @@ section ol {
 
 .stats ol li p:last-child {
   color: #000;
-  background: #fff;
   border-radius: 2px;
-
   padding: 1px 3px;
 }
 .stats li {
-  display: flex;
   width: 193px;
-  justify-content: space-between;
+  text-align: justify;
 }
 
 .center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  position: absolute;
+  right: 50%;
+  transform: translateX(50%);
+  height: 150px;
 }
 
-.pokemon:focus {
-  outline: none;
-}
+
 
 .pokemon:focus .stats {
   opacity: 1;
