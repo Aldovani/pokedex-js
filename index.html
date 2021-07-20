@@ -4,39 +4,42 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pokemon</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
 
-    <link rel="shortcut icon" href="img/favicon.png " type="image/x-icon" />
+    <link
+      rel="shortcut icon"
+      href="assets/img/favicon.png"
+      type="image/x-icon"
+    />
     <link rel="stylesheet" href="styles/types.css" />
     <link rel="stylesheet" href="styles/styles.css" />
     <link rel="stylesheet" href="styles/header.css" />
-    <link rel="stylesheet" href="styles/darkmode.css" />
-    <link rel="stylesheet" href="styles/button.css" />
+      <title>Pokemon</title>
   </head>
   <body>
-    <header class="header">
+    <header class="header" id="header">
       <h1 class="logo">Pokedex</h1>
-      
+
       <div class="toggle">
         <input id="switch" type="checkbox" name="theme" />
         <label for="switch">Toggle</label>
       </div>
-
     </header>
 
-    <div class="container"></div>
-
-    <div class="center">
-      <button  type="button">
-        <img src="https://img.icons8.com/pastel-glyph/64/000000/add.png" />
-      </button>
-
-      <div class="load"></div>
+    <main class="container"></main>
+    <div class="observer">
+      <div class="loading"></div>
     </div>
-    <button class="button"></button>
 
+    <a href="#header" class="button-to-top">
+      <img src="/assets/img/arrow-up.svg" alt="arrow-up" />
+    </a>
     <script src="js/main.js"></script>
-    <script src="js/buttonFloat.js"></script>
-    <script src="js/darkmode.js"></script>
+
+    
+
   </body>
 </html>

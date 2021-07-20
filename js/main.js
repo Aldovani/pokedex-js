@@ -1,29 +1,15 @@
-const div = document.querySelector(".container");
-const button = document.querySelector("button");
+const $div = document.querySelector(".container");
 let contI = 1;
 let n = 24;
 
 window.onload = pokemon;
 
-button.addEventListener("click", () => {
-  button.style = "display:none";
-  pokemon();
-});
-
 async function pokemon() {
-
-  document.querySelector(".load").style = "display:block";
   const pokemon = await getPokemon(n);
   pokemon.map((e) => createCard(e));
-
-  button.style = "display:block";
-  document.querySelector(".load").style = "display:none ";
-  if (contI > 898) {
-    button.style = "display:none";
-  }
 }
 
-async function getPokemon(textNumber ,nome='') {
+async function getPokemon(textNumber, nome = "") {
   let pokemonList = [];
   for (contI; contI <= Number(textNumber) && contI <= 898; contI++) {
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${contI}`);
@@ -35,13 +21,11 @@ async function getPokemon(textNumber ,nome='') {
 }
 
 function createCard(pokemon) {
-  let listStatsElement = "";
-  let listTypesElement = "";
-  let idConvertido = "";
-
   const { id, types, stats, name, sprites } = pokemon;
 
-  id < 100 ? (idConvertido = `${id}`.padStart(3, "0")) : (idConvertido = id);
+  let listStatsElement = "";
+  let listTypesElement = "";
+  const idConvertido = id < 100 ? `${id}`.padStart(3, "0") : id;
 
   for (const state of stats) {
     listStatsElement += `<li>${state.stat.name}:${state.base_stat} </li>
@@ -50,15 +34,14 @@ function createCard(pokemon) {
 
   for (const tipos of types) {
     listTypesElement += `
-          <li class="tipos" data-tipo="${tipos.type.name}">
+          <li class="types" data-type="${tipos.type.name}">
               ${tipos.type.name}
           </li>
   `;
   }
 
-
   const card = `
-  <div class="pokemon" data-id-pokemon=${id} data-name-pokemon=${name} tabindex="0">
+  <div class="card"  tabindex="0">
 
     <img
       title="${name}"
@@ -77,8 +60,53 @@ function createCard(pokemon) {
       <ol>
         ${listStatsElement}
       </ol>
-    </section>
-  </div>`;
+      </section>
+      </div>`;
 
-  div.innerHTML += card;
+  $div.innerHTML += card;
 }
+
+// =============== infinite scroll ===============
+const observer = new IntersectionObserver((e) => {
+  if (e[0].isIntersecting) {
+    document.querySelector(".loading").classList.add("show");
+    setTimeout(() => {
+      pokemon();
+      document.querySelector(".loading").classList.remove("show");
+    }, 2000);
+  }
+});
+
+observer.observe(document.querySelector(".observer"));
+observer.observe(document.querySelector(".button-to-top"));
+
+// =============== dark mode ===============
+
+const input = document.querySelector("input");
+if (localStorage.getItem("darkMod")) {
+  if (localStorage.getItem("darkMod") == "true") input.checked = true;
+} else {
+  localStorage.setItem("darkMod", false);
+  input.checked = false;
+}
+
+function dark() {
+  if (input.checked) {
+    document.body.classList.add("dark-mode");
+    localStorage.setItem("darkMod", true);
+  } else {
+    localStorage.setItem("darkMod", false);
+    document.body.classList.remove("dark-mode");
+  }
+}
+dark();
+
+input.addEventListener("change", dark);
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY >= 1000) {
+    document.querySelector(".button-to-top").classList.add("show");
+  } else {
+    document.querySelector(".button-to-top").classList.remove("show");
+  }
+});

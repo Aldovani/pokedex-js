@@ -3,19 +3,24 @@
   padding: 0;
   scroll-behavior: smooth;
   box-sizing: border-box;
-
+  font-family: "Roboto", sans-serif;
+}
+:root{
+ 
+  --text-color-light:#d5d5d5;
+  --text-color:#2c2c2c;
 }
 
 body {
-  color: black;
   background: #eff0f3;
   font-family: Arial, sans-serif;
   transition: all 1s;
 }
 
+
+
 .container {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
@@ -23,7 +28,7 @@ body {
   margin-top: 50px;
 }
 
-.pokemon {
+.card {
   border-radius: 8px;
   display: flex;
   flex-direction: column;
@@ -34,14 +39,15 @@ body {
   height: 340px;
   position: relative;
   transition: all 0.5s;
+
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
 }
 
-.pokemon:hover {
+.card:hover {
   transform: translateY(-10px) scale(1.03);
 }
 
-.pokemon img {
+.card img {
   height: 100px;
   width: 100px;
   transition: all 1s;
@@ -61,20 +67,19 @@ body {
 .info {
   transform: translateY(0px);
   transition: all 1s;
-
 }
 .idPokemon {
   color: #919191;
   font-size: 16px;
 }
 
-.pokemon .namePokemon {
+.card .namePokemon {
   text-transform: capitalize;
   font-size: 24px;
-  font-weight: normal;
+  font-weight: bold;
 }
 
-.tipos {
+.types {
   border-radius: 4px;
   margin-right: 8px;
   padding: 4px 10px;
@@ -90,9 +95,9 @@ section ol {
 .stats {
   transform: translateY(0px);
   position: absolute;
-  opacity: 0;
   transition: all 1s;
   text-transform: capitalize;
+  opacity: 0;
 }
 .stats ol {
   display: flex;
@@ -111,53 +116,89 @@ section ol {
   text-align: justify;
 }
 
-.center {
-  position: absolute;
-  right: 50%;
-  transform: translateX(50%);
-  height: 150px;
-}
-
-
-
-.pokemon:focus .stats {
+.card:focus .stats {
   opacity: 1;
+
   transform: translateY(70px);
 }
-.pokemon:focus .info {
+.card:focus .info {
   transform: translateY(-160px);
 }
 
-.pokemon:focus img {
+.card:focus img {
   transform: translateY(-25px) translateX(65px);
 }
 
-button {
-  margin-top: 40px;
-  margin-bottom: 40px;
-  box-sizing: border-box;
-  cursor: pointer;
-  border: 0;
-  outline: none;
-  background-color: transparent;
+.observer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem;
 }
 
-.load {
-  width: 20px;
-  height: 20px;
+.loading {
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  color: #000;
-  border: 3px solid;
+  border: 3px solid blue;
   border-top-color: transparent;
   animation: load 0.5s linear infinite;
   display: none;
-  margin-top: 40px;
-  margin-bottom: 40px;
+}
+
+.loading.show {
+  display: block;
+}
+
+.button-to-top {
+  position: fixed;
+  bottom: 1rem;
+  right: 2rem;
+
+  background-color: yellow;
+
+  padding: 0.3rem;
+  line-height: 0;
+  clip-path: circle();
+
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s;
+  transform: translateY(50%);
+}
+.button-to-top.show {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.button-to-top img {
+  width: 2rem;
+}
+
+.dark-mode {
+  background: #242629;
+}
+
+.dark-mode .header {
+  color: #fff;
+}
+.dark-mode .card {
+  background: #16161a;
+
+}
+.dark-mode .card .stats {
+  color: #fffffe;
+}
+.dark-mode .card .info {
+  color: #fffffe;
 }
 
 @keyframes load {
   to {
     transform: rotate(360deg);
-    filter: contrast(10);
+  }
+  from {
+    transform: rotate(0deg);
   }
 }

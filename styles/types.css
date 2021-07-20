@@ -1,68 +1,68 @@
-li[data-tipo]{
+li[data-type] {
   color: black;
   text-transform: capitalize;
+  font-weight: 400;
 }
-li[data-tipo="fire"] {
+li[data-type="fire"] {
   background: red;
-  color: white;
+  color: var(--text-color-light) ;
 }
-li[data-tipo="grass"] {
+li[data-type="grass"] {
   background: greenyellow;
 }
-li[data-tipo="water"] {
+li[data-type="water"] {
   background: blue;
-  color: white;
+  color: var(--text-color-light) ;
 }
-li[data-tipo="bug"] {
+li[data-type="bug"] {
   background: #c0ee44ee;
 }
-li[data-tipo="normal"] {
+li[data-type="normal"] {
   background: #ddd;
 }
-li[data-tipo="poison"] {
+li[data-type="poison"] {
   background: blueviolet;
-  color: white;
+  color: var(--text-color-light) ;
 }
-li[data-tipo="electric"] {
+li[data-type="electric"] {
   background: yellow;
 }
-li[data-tipo="ground"] {
+li[data-type="ground"] {
   background: moccasin;
 }
-li[data-tipo="fighting"] {
+li[data-type="fighting"] {
   background: #e9a736;
 }
-li[data-tipo="psychic"] {
+li[data-type="psychic"] {
   background: violet;
 }
-li[data-tipo="rock"] {
+li[data-type="rock"] {
   background: maroon;
-  color: white;
+  color: var(--text-color-light) ;
 }
-li[data-tipo="flying"] {
+li[data-type="flying"] {
   background: #32a2ec;
 }
-li[data-tipo="ghost"] {
+li[data-type="ghost"] {
   background: #333333;
-  color: white;
+  color: var(--text-color-light) ;
 }
-li[data-tipo="ice"] {
+li[data-type="ice"] {
   background: royalblue;
-  color: white;
+  color: var(--text-color-light) ;
 }
-li[data-tipo="dragon"] {
+li[data-type="dragon"] {
   background: rebeccapurple;
-  color: white;
+  color: var(--text-color-light) ;
 }
-li[data-tipo="steel"] {
+li[data-type="steel"] {
   background: #706b6b;
 }
-li[data-tipo="dark"] {
+li[data-type="dark"] {
   background: black;
-color: white;}
-li[data-tipo="fairy"] {
-  background: #ff1cf4;
-  color: white;
+  color: var(--text-color-light) ;
 }
-
-
+li[data-type="fairy"] {
+  background: #ff1cf4;
+  color: var(--text-color-light) ;
+}
